@@ -27,6 +27,10 @@ public class Utilities {
 		return Gdx.graphics.getHeight()-yCoord;
 	}
 	
+	public static float convertToWorldCoordinate(float sbYCoord){
+		return Gdx.graphics.getHeight()-sbYCoord;
+	}
+	
 	/**
 	 * Converts the specified coordinates to SpriteBatch coordinates.
 	 * @param coord The screen coordinates.
