@@ -13,9 +13,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class ExtendedLabel extends Label implements SimpleSprite {
 
 	public boolean mouseIntersects(){
-		Vector2 realPos = new Vector2(getX(), Utilities.convertToWorldCoordinate(getY()-(getHeight()*getScaleY())));
+		Vector2 realPos = new Vector2(getX(), Utilities.convertToWorldCoordinate(getY()));
 		Vector2 mousePos = new Vector2(Gdx.input.getX(), Gdx.input.getY());
-		return mousePos.x >= realPos.x && mousePos.x <= realPos.x+(getWidth()*getScaleX()) && mousePos.y >= realPos.y && mousePos.y <= realPos.y+(getHeight()*getScaleY());
+		return mousePos.x >= realPos.x && mousePos.x <= realPos.x+(getWidth()*getScaleX()) && mousePos.y <= realPos.y && mousePos.y >= realPos.y-(getHeight()*getScaleY());
 	}
 	
 	public ExtendedLabel(CharSequence text, Skin skin, String fontName,
