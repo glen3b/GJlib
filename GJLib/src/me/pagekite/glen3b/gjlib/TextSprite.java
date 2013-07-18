@@ -31,6 +31,14 @@ public class TextSprite implements SimpleSprite {
 		return position.y;
 	}
 	
+	public void setX(float value){
+		position.x = value;
+	}
+	
+	public void setY(float value){
+		position.y = value;
+	}	
+	
 	public void update(float deltaTime){
 		
 		for(UpdatedListener ul : mListenerList){
