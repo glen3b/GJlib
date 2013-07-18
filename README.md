@@ -1,4 +1,4 @@
 GJLib
 =====
 
-A GLib-like library for LibGDX support classes
+A [GLib](https://github.com/glen3b/Glib)-like library for LibGDX support classes.
