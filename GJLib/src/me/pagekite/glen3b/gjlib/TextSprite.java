@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class TextSprite implements Updatable, Drawable {
+public class TextSprite implements SimpleSprite {
 	public BitmapFont font;
 	public CharSequence text = "";
 	public Vector2 position = Vector2.Zero;
