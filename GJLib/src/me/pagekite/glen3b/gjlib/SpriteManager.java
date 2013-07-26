@@ -16,7 +16,10 @@ public class SpriteManager implements Collection<SimpleSprite> {
 	}
 	
 	public void update(){
-		float deltaTime = Gdx.graphics.getDeltaTime();
+		update(Gdx.graphics.getDeltaTime());
+	}
+	
+	public void update(float deltaTime){
 		for(SimpleSprite es : mSpriteList){
 			es.update(deltaTime);
 		}
