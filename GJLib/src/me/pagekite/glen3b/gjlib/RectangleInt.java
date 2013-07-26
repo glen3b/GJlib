@@ -6,6 +6,10 @@ public class RectangleInt {
 	public int x;
 	public int y;
 	
+	public int getArea(){
+		return width*height;
+	}
+	
 	public RectangleInt(int x, int y, int width, int height){
 		this.x = x;
 		this.y = y;
