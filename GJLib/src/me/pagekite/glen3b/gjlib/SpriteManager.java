@@ -15,6 +15,12 @@ public class SpriteManager implements Collection<SimpleSprite> {
 		return mSpriteList.get(index);
 	}
 	
+	public SpriteManager(SimpleSprite... allSprites){
+		for(SimpleSprite s : allSprites){
+			add(s);
+		}
+	}
+	
 	public void update(){
 		update(Gdx.graphics.getDeltaTime());
 	}

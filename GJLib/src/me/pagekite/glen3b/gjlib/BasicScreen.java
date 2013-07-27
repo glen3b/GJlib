@@ -21,10 +21,16 @@ public class BasicScreen implements Screen {
 		mTarget = target;
 	}
 	
+	public boolean disposeBatch = false;
+	
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
+		for(SimpleSprite s : this.getAllSprites()){
+			s.dispose();
+		}
+		if(this.disposeBatch){
+			this.getTarget().dispose();
+		}
 	}
 
 	@Override
@@ -39,10 +45,18 @@ public class BasicScreen implements Screen {
 
 	}
 	
+	public void update(float deltaTime){
+		getAllSprites().update(deltaTime);
+	}
+	
+	public void draw(){
+		getAllSprites().drawAll(getTarget());
+	}
+	
 	@Override
 	public void render(float deltaTime) {
-		getAllSprites().update(deltaTime);
-		getAllSprites().drawAll(getTarget());
+		update(deltaTime);
+		draw();
 	}
 
 	@Override

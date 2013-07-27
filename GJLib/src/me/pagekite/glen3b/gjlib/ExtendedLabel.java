@@ -81,4 +81,9 @@ public class ExtendedLabel extends Label implements SimpleSprite {
 		}
 	}
 
+	@Override
+	public void dispose() {
+		//Nothing needs disposing?
+	}
+
 }

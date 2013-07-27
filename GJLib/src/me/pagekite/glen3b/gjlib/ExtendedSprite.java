@@ -17,6 +17,10 @@ public class ExtendedSprite extends Sprite implements SimpleSprite, Updatable, D
 	public float xSpeed = 0;
 	public float ySpeed = 0;
 	
+	public Vector2 getTopLeftCorner(){
+		return new Vector2(getX(), getY()+getScaledHeight());
+	}
+	
 	private List<UpdatedListener> mListenerList = new ArrayList<UpdatedListener>();
 	
 	public void registerUpdatedListener(UpdatedListener listener){
@@ -79,6 +83,11 @@ public class ExtendedSprite extends Sprite implements SimpleSprite, Updatable, D
 	
 	public float getScaledHeight(){
 		return getScaledSize().y;
+	}
+
+	@Override
+	public void dispose() {
+		this.getTexture().dispose();
 	}
 
 }
