@@ -8,6 +8,9 @@ public class BasicScreen implements Screen {
 	private SpriteManager mAllSprites;
 	private SpriteBatch mTarget;
 	
+	private boolean _isVisible = true;
+	protected boolean _updateWhenNotVisible  = false;
+	
 	public SpriteManager getAllSprites(){
 		return mAllSprites;
 	}
@@ -35,8 +38,7 @@ public class BasicScreen implements Screen {
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
-
+		_isVisible = false;
 	}
 
 	@Override
@@ -45,12 +47,16 @@ public class BasicScreen implements Screen {
 
 	}
 	
-	public void update(float deltaTime){
-		getAllSprites().update(deltaTime);
+	public void update(float deltaTime) {
+		if(_isVisible || _updateWhenNotVisible) {
+			getAllSprites().update(deltaTime);
+		}
 	}
 	
 	public void draw(){
-		getAllSprites().drawAll(getTarget());
+		if(_isVisible) {
+			getAllSprites().drawAll(getTarget());			
+		}
 	}
 	
 	@Override
@@ -73,8 +79,7 @@ public class BasicScreen implements Screen {
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
-
+		_isVisible = true;
 	}
 
 }
