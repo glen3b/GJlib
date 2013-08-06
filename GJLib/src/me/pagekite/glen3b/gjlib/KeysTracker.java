@@ -20,6 +20,11 @@ public class KeysTracker implements InputProcessor {
 		return false;
 	}
 
+	@Override
+	public boolean keyTyped(char arg0) {
+		mTypedStr.append(arg0);
+		return false;
+	}
 	
 	private List<Integer> mPressedKeys = new ArrayList<Integer>();
 	
@@ -28,20 +33,20 @@ public class KeysTracker implements InputProcessor {
 	}
 	
 	
-	/**
-	 * A string representing all characters typed over the course of the game.
-	 */
-	public String typed = "";
 	
-	@Override
-	public boolean keyTyped(char arg0) {
-		typed += arg0;
-		return false;
+	private StringBuilder mTypedStr = new StringBuilder();
+	
+	/**
+	 * Returns a string representing all characters typed over the course of the game.
+	 */
+	public String getTyped(){
+		return mTypedStr.toString();
+		
 	}
 
 	@Override
-	public boolean keyUp(int arg0) {
-		mPressedKeys.remove(arg0);
+	public boolean keyUp(int key) {
+		mPressedKeys.remove((Object)key);
 		return false;
 	}
 
