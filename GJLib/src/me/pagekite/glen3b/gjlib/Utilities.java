@@ -14,6 +14,10 @@ public class Utilities {
 		return new Color(r/255f, g/255f, b/255f, a/255f);
 	}
 	
+	public static Color xnaColorToOpenGlColor(float r, float g, float b){
+		return Utilities.xnaColorToOpenGlColor(r/255f, g/255f, b/255f, 255f);
+	}
+	
 	public static Vector2 createVector(float value){
 		return new Vector2(value,value);
 	}
