@@ -41,6 +41,14 @@ public class BasicScreen implements Screen {
 		_isVisible = false;
 	}
 
+	public boolean getAutoSpriteBatchManager(){
+		return getAllSprites().autoSpriteBatchManage;
+	}
+	
+	public void setAutoSpriteBatchManager(boolean autoSbManage){
+		getAllSprites().autoSpriteBatchManage = autoSbManage;
+	}
+	
 	@Override
 	public void pause() {
 		// TODO Auto-generated method stub
