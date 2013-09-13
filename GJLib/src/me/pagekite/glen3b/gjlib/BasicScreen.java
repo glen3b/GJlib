@@ -41,12 +41,12 @@ public class BasicScreen implements Screen {
 		_isVisible = false;
 	}
 
-	public boolean getAutoSpriteBatchManager(){
+	public boolean isAutoSpriteBatchManager(){
 		return getAllSprites().autoSpriteBatchManage;
 	}
 	
-	public void setAutoSpriteBatchManager(boolean autoSbManage){
-		getAllSprites().autoSpriteBatchManage = autoSbManage;
+	public void enableAutoSpriteBatchManager(boolean isEnabled){
+		getAllSprites().autoSpriteBatchManage = isEnabled;
 	}
 	
 	public boolean isVisible(){
